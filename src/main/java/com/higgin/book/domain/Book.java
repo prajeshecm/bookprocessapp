@@ -1,23 +1,32 @@
 package com.higgin.book.domain;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
-
-@Component
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name="Book")
 public class Book {
 
+    @Id
+    @GeneratedValue
     protected Integer bookId;
     protected String bookName;
     protected String authorName;
     protected Float cost;
     protected Date published;
-
-    Book(){
-
-    }
 
     public Integer getBookId() {
         return bookId;
