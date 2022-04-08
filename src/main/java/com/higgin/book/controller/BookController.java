@@ -24,17 +24,23 @@ public class BookController {
         this.bookService = bookService ;
     }
 
-    @GetMapping("/name")
-    public Optional<List<Book>> searchBook(@RequestParam  String bookName){
-        LOGGER.info("search book with actuator {} ",bookName);
-        List<Book> bookList =  bookService.findBookService(bookName) ;
-        return bookList.isEmpty() ? Optional.empty() : Optional.of(bookList);
-    }
-
-
     @PostMapping("/save")
     public void saveBook(@RequestBody Book book){
         LOGGER.info("save book");
         bookService.saveBookService(book);
+    }
+
+    @GetMapping("/search")
+    public Optional<Book> searchBook(@RequestParam  String bookId){
+        LOGGER.info("search book with actuator {} ",bookId);
+        return  bookService.findBookById(bookId) ;
+    }
+
+
+    @GetMapping("/all")
+    public Optional<List<Book>> getAllBooks(){
+        LOGGER.info("get all the books from repo");
+        List<Book> bookList =  bookService.getAllBooks() ;
+        return bookList.isEmpty() ? Optional.empty() : Optional.of(bookList);
     }
 }
