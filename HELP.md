@@ -15,3 +15,9 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
+###  Tech stack :
+        * spring profile 
+        * spring boot with h2 
+        * cdk with ECS-service 
+        * Streams sample 
+        * Environment details using spring class
