@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
-@Configuration
+//@Component
+//@Configuration : TODO : this is commented when postgres added into the scope but this has to work either way.
 public class H2Config {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(H2Config.class);

@@ -1,1 +1,45 @@
-Design for the bookProcess application is below : 
+Design for the bookProcess application is below :
+
+
+
+=================================================================================================================================================================
+-----------------------------------------------------------------------------TESTING ----------------------------------------------------------------------------
+=================================================================================================================================================================
+
+
+LOCAL TEST the REST-API using below :
+-------------------------------------
+
+      URL :
+                POST :
+                    http://localhost:8081/book/save
+
+                         {
+                             "bookId":"222",
+                             "bookName":"All about sachin",
+                             "authorName":"Bombay walla",
+                             "cost":"100"
+                         }
+
+                 GET : http://localhost:8081/book/all
+                 GET : http://localhost:8081/book/name?bookName=TEST-BOOK-container
+
+
+Cloud TEST the REST-API using below :
+------------------------------------
+        URL :
+
+            POST :
+
+                http://localhost:8081/book/save
+                {
+                    "bookId":"222",
+                    "bookName":"All about sachin",
+                    "authorName":"Bombay walla",
+                    "cost":"100"
+                }
+
+            GET : http://localhost:8081/book/all
+            GET : http://localhost:8081/book/name?bookName=TEST-BOOK-container
+
+==========================================================================================================================================================

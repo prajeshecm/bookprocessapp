@@ -14,7 +14,6 @@ public class AwsRDSConfig {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(AwsRDSConfig.class);
 
-    protected String driverClass;
     protected String driverUrl;
     protected String userName;
     protected String password;
@@ -23,12 +22,10 @@ public class AwsRDSConfig {
     @Value("$spring.profiles.active")
     protected String activeProfiles;
 
-    AwsRDSConfig(@Value("${spring.jpa.datasource.driver-class-name}") String driverClass,
-                         @Value("${spring.jpa.datasource.url}") String driverUrl,
-                         @Value("${spring.jpa.datasource.username}") String userName,
-                         @Value("${spring.jpa.datasource.password}") String password,
+    AwsRDSConfig(@Value("${spring.datasource.url}") String driverUrl,
+                         @Value("${spring.datasource.username}") String userName,
+                         @Value("${spring.datasource.password}") String password,
              @Value("${spring.jpa.hibernate.ddl-auto}") String ddl_auto) {
-        this.driverClass = driverClass;
         this.driverUrl = driverUrl;
         this.userName = userName;
         this.password = password;
@@ -36,9 +33,6 @@ public class AwsRDSConfig {
         toString();
     }
 
-    public String getDriverClass() {
-        return driverClass;
-    }
 
     public String getDriverUrl() {
         return driverUrl;
@@ -59,7 +53,6 @@ public class AwsRDSConfig {
     @Override
     public String toString() {
         return "AwsRDSConfig{" +
-                "driverClass='" + driverClass + '\'' +
                 ", driverUrl='" + driverUrl + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +

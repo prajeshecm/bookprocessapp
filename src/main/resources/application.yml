@@ -2,7 +2,7 @@ spring:
   application:
     name: Book-process-app
   profiles:
-    active: local
+    active: dev
 
 server:
   port: 8081
@@ -23,7 +23,7 @@ spring:
       on-profile: local
 
   datasource:
-    driverClassName: org.h2.Driver
+    #driverClassName: org.h2.Driver  TODO : this is commented when postgres added into the scope but this has to work either way.
     url: jdbc:h2:file:/Users/kunip004/Documents/prajesh/Docs/test
     username: sa
     password: password
@@ -39,17 +39,22 @@ spring:
         trace: true
         web-allow-others: false
     #jdbc:h2:file:/data/demo--to save
+
 ---
 spring:
   config:
     active:
       on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Customer
+    username: postgres
+    password: CK123instar@1
   jpa:
     hibernate:
       ddl-auto: update
-    datasource:
-      driverClassName : org.h2.Driver
-      url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
-      username: dev
-      password: dev
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true

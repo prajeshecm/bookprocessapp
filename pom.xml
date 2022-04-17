@@ -31,6 +31,15 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.199</version>
+			<scope>test</scope> <!-- making h2 as test scope when real/postgress is added into the scope-->
+		</dependency>
+
+		<!-- postgres database for real time process -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.0</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
