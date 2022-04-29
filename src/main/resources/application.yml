@@ -47,9 +47,13 @@ spring:
       on-profile: dev
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/Customer
-    username: postgres
+    #url: jdbc:postgresql://db:5432/Customer
+    #url: jdbc:postgresql://${RDS_HOSTNAME:db}:${RDS_PORT:5432}/${RDS_DB_NAME:Customer}
+    #username: ${RDS_USERNAME:postgres}
+    #password: ${RDS_PASSWORD:CK123instar@1} #CK123instar for aws
     password: CK123instar@1
+    url: jdbc:postgresql://db2:5432/Customer  #if local put this as "localhost" instead of container-name "db2"
+    username: postgres
   jpa:
     hibernate:
       ddl-auto: update

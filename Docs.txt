@@ -6,6 +6,19 @@ Design for the bookProcess application is below :
 -----------------------------------------------------------------------------TESTING ----------------------------------------------------------------------------
 =================================================================================================================================================================
 
+Deploy :
+----
+Docker Commands :
+     Build :
+        docker build -f Dockerfile -t <image_name> .
+        example :   docker build -f Dockerfile -t bookprocess_rdb-1.0 .
+
+     Run :
+        docker run -f Dockerfile -t bookprocess_rdb-1.0 .
+
+        //with env variables :
+        docker run <list of env variable as --env k=v > <publist port>   <image_name>
+        docker run --env RDS_HOSTNAME=localhost --env RDS_PORT=5432 --env RDS_DB_NAME=customer --env RDS_USERNAME=postgres --env RDS_PASSWORD=CK123instar@1 -p 8080:8081   bookprocess_rdb-1.0
 
 LOCAL TEST the REST-API using below :
 -------------------------------------
@@ -25,13 +38,15 @@ LOCAL TEST the REST-API using below :
                  GET : http://localhost:8081/book/name?bookName=TEST-BOOK-container
 
 
+        Docker :
+
 Cloud TEST the REST-API using below :
 ------------------------------------
         URL :
 
             POST :
 
-                http://localhost:8081/book/save
+                 http://manualbkelb-173210294.us-east-1.elb.amazonaws.com/book/save
                 {
                     "bookId":"222",
                     "bookName":"All about sachin",
@@ -39,7 +54,7 @@ Cloud TEST the REST-API using below :
                     "cost":"100"
                 }
 
-            GET : http://localhost:8081/book/all
-            GET : http://localhost:8081/book/name?bookName=TEST-BOOK-container
+            GET : http://manualbkelb-173210294.us-east-1.elb.amazonaws.com/book/all
+            GET : http://manualbkelb-173210294.us-east-1.elb.amazonaws.com/book/name?bookName=TEST-BOOK-CLOUD-ECS
 
 ==========================================================================================================================================================
