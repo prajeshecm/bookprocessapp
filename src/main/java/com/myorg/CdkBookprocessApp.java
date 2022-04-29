@@ -1,8 +1,10 @@
 package com.myorg;
 
-import software.amazon.awscdk.App;
+/*import software.amazon.awscdk.App;
 import software.amazon.awscdk.Environment;
-import software.amazon.awscdk.StackProps;
+import software.amazon.awscdk.StackProps;*/
+import software.amazon.awscdk.core.App;
+import software.amazon.awscdk.core.StackProps;
 
 import java.util.Arrays;
 
@@ -39,4 +41,3 @@ public class CdkBookprocessApp {
         app.synth();
     }
 }
-
