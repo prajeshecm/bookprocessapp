@@ -24,8 +24,6 @@ public class CdkBookprocessStack extends Stack {
         // final Queue queue = Queue.Builder.create(this, "CdkBookprocessQueue")
         //         .visibilityTimeout(Duration.seconds(300))
         //         .build();
-
-
         DockerImageAssetProps imageAssetProps = DockerImageAssetProps.builder()
                 .directory("../../bookprocessapp/")
                 .build();
