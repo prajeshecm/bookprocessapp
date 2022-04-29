@@ -29,7 +29,6 @@ public class CdkBookprocessStack extends Stack {
         DockerImageAssetProps imageAssetProps = DockerImageAssetProps.builder()
                 .directory("../../bookprocessapp/")
                 .build();
-
         DockerImageAsset image = new DockerImageAsset(this,"book-processImage", imageAssetProps);
 
     }
