@@ -19,7 +19,6 @@ public class CdkBookprocessStack extends Stack {
         super(scope, id, props);
 
         // The code that defines your stack goes here
-
         // example resource
         // final Queue queue = Queue.Builder.create(this, "CdkBookprocessQueue")
         //         .visibilityTimeout(Duration.seconds(300))
@@ -28,6 +27,5 @@ public class CdkBookprocessStack extends Stack {
                 .directory("../../bookprocessapp/")
                 .build();
         DockerImageAsset image = new DockerImageAsset(this,"book-processImage", imageAssetProps);
-
     }
 }
