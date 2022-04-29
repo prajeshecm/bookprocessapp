@@ -1,5 +1,7 @@
 FROM containerregistry.disney.com/digital/identity-base-jvm17:latest
 
+VOLUME /tmp
+
 ARG JAR_FILE=book-*.jar
 
 HEALTHCHECK \

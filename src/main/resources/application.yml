@@ -2,7 +2,7 @@ spring:
   application:
     name: Book-process-app
   profiles:
-    active: local
+    active: dev
 
 server:
   port: 8081
@@ -23,7 +23,7 @@ spring:
       on-profile: local
 
   datasource:
-    driverClassName: org.h2.Driver
+    #driverClassName: org.h2.Driver  TODO : this is commented when postgres added into the scope but this has to work either way.
     url: jdbc:h2:file:/Users/kunip004/Documents/prajesh/Docs/test
     username: sa
     password: password
@@ -39,17 +39,26 @@ spring:
         trace: true
         web-allow-others: false
     #jdbc:h2:file:/data/demo--to save
+
 ---
 spring:
   config:
     active:
       on-profile: dev
+
+  datasource:
+    #url: jdbc:postgresql://db:5432/Customer
+    #url: jdbc:postgresql://${RDS_HOSTNAME:db}:${RDS_PORT:5432}/${RDS_DB_NAME:Customer}
+    #username: ${RDS_USERNAME:postgres}
+    #password: ${RDS_PASSWORD:CK123instar@1} #CK123instar for aws
+    password: ${RDS_PASSWORD:CK123instar@1}
+    url: jdbc:postgresql://${RDS_HOSTNAME:db2}:${RDS_PORT:5432}/${RDS_DB_NAME:Customer}  #if local put this as "localhost" instead of container-name "db2"
+    username: ${RDS_USERNAME:postgres}
   jpa:
     hibernate:
       ddl-auto: update
-    datasource:
-      driverClassName : org.h2.Driver
-      url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
-      username: dev
-      password: dev
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
