@@ -1,0 +1,26 @@
+) I have a requirement  , I have to create the agent tool or product which will search the job portal like glassdoor , linkedin , trueup 
+ for my profile ( based on my resume and my preference like location , technology , etc as input )  
+Once the job matches it will create the job list based on the accuracy percentage for each job let say , job1_walmart : 95% ,job2_Google : 99% 
+Then it will create a new job resume for each job let say wlamart_resume.pdf and google_resume.pdf based on their standards and  
+Ask for my approval for the same  
+Once I approve it will go ahead and apply the job position and send me an email  
+
+i need the step by step on how to create this using  
+let it be little clear , i want the option 3  
+
+i need the step by step on how to create this using   1
+)agents in microsft visual code as option 1 ( agent , skills , tools etc )  with out using langchain/lang graph just orinary python and LLM models 
+2)Claude code as option 2 ( agent , skills , tools etc ) using claude code the same module 
+3) using the same this time langChain & landgraph for the same project 
+
+Can you generate end to end for each 3 options above 
+with simple hello world
+with job serach and application agent
+
+but to start with for both the option , I need to do a small ( hellow world kind of begineers )  then do this above , project  
+SMALL :  
+1)kind of hellow world very simple for beginner in agents in microsft visual code  
+2)same kind of hellow world very simple for beginner in agents in Claude code as option 2 
+
+Job Search and Apply Agent:  
+For both the options how to implement , pros and cons of both the options
